@@ -55,7 +55,7 @@ var getNextTrain = function(line, start, destination) {
                         train.stop = lines[j].stops[stopIndex].time;
                         train.available = true;
                     } else {
-                        train.stop = "Does not stop";
+                        train.stop = "Does not stop at station";
                         train.available = false;
                     }
                     train.number = lines[j].name;

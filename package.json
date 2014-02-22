@@ -1,0 +1,24 @@
+{
+  "name": "metra",
+  "version": "0.0.2",
+  "description": "An API for determining when the next available Metra train is.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whyohwhyamihere/metra.git"
+  },
+  "keywords": [
+    "metra",
+    "train",
+    "chicago"
+  ],
+  "author": "Chris Anderson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/whyohwhyamihere/metra/issues"
+  },
+  "homepage": "https://github.com/whyohwhyamihere/metra"
+}
