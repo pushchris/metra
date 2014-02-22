@@ -40,22 +40,24 @@ var getNextTrain = function(line, start, destination) {
     var currentTime = new Date(),
         train = {};
         
-        train.start = currentTime*2,
-        train.stop = currentTime*2,
+        train.departure = currentTime*2,
+        train.arrival = currentTime*2,
         train.available = true;
+        train.origin = start;
+        train.destination = destination;
         
     for (j in lines) {
         if (lines[j].direction == direction) {
             var time = lines[j].stops[startIndex].time;
             if (time != "") {
                 var parsedTime = parseTime(time);
-                if (parsedTime > currentTime && parsedTime < train.start && lines[j].stops[stopIndex].time != "") {
-                    train.start = time;
+                if (parsedTime > currentTime && parsedTime < train.departure && lines[j].stops[stopIndex].time != "") {
+                    train.departure = time;
                     if (lines[j].stops[stopIndex].time != "") {
-                        train.stop = lines[j].stops[stopIndex].time;
+                        train.arrival = lines[j].stops[stopIndex].time;
                         train.available = true;
                     } else {
-                        train.stop = "Does not stop at station";
+                        train.arrival = "Does not stop at station";
                         train.available = false;
                     }
                     train.number = lines[j].name;
@@ -64,7 +66,7 @@ var getNextTrain = function(line, start, destination) {
         }
     }
     
-    if (train.start == currentTime*2) {
+    if (train.departure == currentTime*2) {
         return { "error": "No trains available today" };
     }
     

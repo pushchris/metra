@@ -1,6 +1,6 @@
 {
   "name": "metra",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An API for determining when the next available Metra train is.",
   "main": "index.js",
   "scripts": {
