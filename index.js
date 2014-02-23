@@ -1,3 +1,5 @@
+var t = require('time');
+
 var getLine = function(line) {
     
     var day = new Date().getDay();
@@ -37,11 +39,12 @@ var getNextTrain = function(line, start, destination) {
         stopIndex = (stations.length-1) - stopIndex;
     }
     
-    var currentTime = new Date(),
+    var currentTime = new t.Date();
+        currentTime.setTimezone('America/Chicago');
         train = {};
         
-        train.departure = currentTime*2,
-        train.arrival = currentTime*2,
+        train.departure = currentTime*2;
+        train.arrival = currentTime*2;
         train.available = true;
         train.origin = start;
         train.destination = destination;
@@ -75,7 +78,8 @@ var getNextTrain = function(line, start, destination) {
 
 var parseTime = function(timeStr, dt) {
     if (!dt) {
-        dt = new Date();
+        dt = new t.Date();
+        dt.setTimezone('America/Chicago');
     }
  
     var time = timeStr.match(/(\d+)(?::(\d\d))?\s*(p?)/i);

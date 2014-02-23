@@ -1,10 +1,13 @@
 {
   "name": "metra",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "An API for determining when the next available Metra train is.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "time": "x"
   },
   "repository": {
     "type": "git",
